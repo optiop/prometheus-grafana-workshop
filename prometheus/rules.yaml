@@ -1,0 +1,11 @@
+groups:
+- name: AppAlerts
+  rules:
+  - alert: SegementationFault
+    expr: rate(segmentation_error_total[1m]) > 0
+    for: 0s
+    labels:
+      severity: critical
+    annotations:
+      summary: "Segmentation fault on {{ $labels.instance }}"
+      description: "Segmentation fault on {{ $labels.instance }} for 10 seconds."

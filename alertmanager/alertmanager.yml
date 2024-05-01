@@ -1,0 +1,17 @@
+global:
+  smtp_from: 'alertmanager@coachcrew.org'
+  smtp_hello: coachcrew.org
+  smtp_smarthost: stunnel:465
+  smtp_require_tls: false
+  smtp_auth_username: 'alertmanager@coachcrew.org'
+  smtp_auth_password: 'password'
+
+route:
+  receiver: 'admin'
+
+receivers:
+- name: 'admin'
+  email_configs:
+  - to: 'admin@coachcrew.org'
+    tls_config:
+      insecure_skip_verify: true
