@@ -37,6 +37,7 @@ services:
     image: grafana/grafana
     volumes:
       - ./grafana/provisioning/datasources/:/etc/grafana/provisioning/datasources/
+      - ./grafana/provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
     environment:
       - GF_PATH_PROVISIONING=/etc/grafana/provisioning

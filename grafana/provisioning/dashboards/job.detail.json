@@ -1,0 +1,1238 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "The dashboard contains details information about the job.",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 6,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 7,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^name$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Job",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 7,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^start_time$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Job activation time",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 13,
+        "y": 0
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^start_time$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Job start time",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "Job details",
+              "url": "http://localhost:3000/d/job-details/job-detail?orgId=1&var-job=${__field.labels.name}"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "1550": {
+                  "color": "dark-blue",
+                  "index": 0,
+                  "text": "Active"
+                },
+                "1560": {
+                  "color": "dark-blue",
+                  "index": 1,
+                  "text": "Workflow is blocked"
+                },
+                "1698": {
+                  "color": "dark-blue",
+                  "index": 2,
+                  "text": "Waiting for start time"
+                },
+                "1700": {
+                  "color": "dark-blue",
+                  "index": 3,
+                  "text": "Waiting for predecessor"
+                },
+                "1800": {
+                  "color": "dark-red",
+                  "index": 4,
+                  "text": "Aborted"
+                },
+                "1802": {
+                  "color": "dark-red",
+                  "index": 5,
+                  "text": "Not executed due to abnormal Workflow end."
+                },
+                "1820": {
+                  "color": "dark-red",
+                  "index": 6,
+                  "text": "Start impossible. Other error."
+                },
+                "1823": {
+                  "color": "dark-red",
+                  "index": 7,
+                  "text": "Error in post processing."
+                },
+                "1850": {
+                  "color": "orange",
+                  "index": 8,
+                  "text": "Manually canceled"
+                },
+                "1851": {
+                  "color": "orange",
+                  "index": 9,
+                  "text": "Workflow canceled manually."
+                },
+                "1900": {
+                  "color": "dark-green",
+                  "index": 13,
+                  "text": "Ended normally"
+                },
+                "1922": {
+                  "color": "orange",
+                  "index": 10,
+                  "text": "Task was manually set inactive."
+                },
+                "1930": {
+                  "color": "orange",
+                  "index": 12,
+                  "text": "Skipped because of WHEN clause"
+                },
+                "1933": {
+                  "color": "orange",
+                  "index": 11,
+                  "text": "Skipped because of conditions."
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Latest Health",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 7,
+        "x": 0,
+        "y": 3
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^title$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Title",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 7,
+        "y": 3
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^duration_time$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Job duration",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 13,
+        "y": 3
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^end_time$/",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Job end time",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "limit",
+          "options": {
+            "limitField": 1
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "title": "job",
+              "url": "http://localhost:3000/d/job-details/job-detail?orgId=1&var-job=${__field.labels.name}"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "1550": {
+                  "color": "dark-blue",
+                  "index": 0,
+                  "text": "Active"
+                },
+                "1560": {
+                  "color": "dark-blue",
+                  "index": 1,
+                  "text": "Workflow is blocked"
+                },
+                "1698": {
+                  "color": "dark-blue",
+                  "index": 2,
+                  "text": "Waiting for start time"
+                },
+                "1700": {
+                  "color": "dark-blue",
+                  "index": 3,
+                  "text": "Waiting for predecessor"
+                },
+                "1800": {
+                  "color": "dark-red",
+                  "index": 4,
+                  "text": "ENDED_NOT_OK - aborted"
+                },
+                "1802": {
+                  "color": "dark-red",
+                  "index": 5,
+                  "text": "ENDED_JP_ABEND  - not executed due to abnormal Workflow end."
+                },
+                "1820": {
+                  "color": "dark-red",
+                  "index": 6,
+                  "text": "FAULT_OTHER - Start impossible. Other error."
+                },
+                "1823": {
+                  "color": "dark-red",
+                  "index": 7,
+                  "text": "FAULT_POST_PROCESSING - error in post processing."
+                },
+                "1850": {
+                  "color": "orange",
+                  "index": 8,
+                  "text": "ENDED_CANCEL - manually canceled"
+                },
+                "1851": {
+                  "color": "orange",
+                  "index": 9,
+                  "text": "ENDED_JP_CANCEL - Workflow canceled manually."
+                },
+                "1900": {
+                  "color": "dark-green",
+                  "index": 13,
+                  "text": "ENDED_OK - ended normally"
+                },
+                "1922": {
+                  "color": "orange",
+                  "index": 10,
+                  "text": "ENDED_INACTIVE - Task was manually set inactive."
+                },
+                "1930": {
+                  "color": "orange",
+                  "index": 12,
+                  "text": "ENDED_SKIPPED - Skipped because of WHEN clause"
+                },
+                "1933": {
+                  "color": "orange",
+                  "index": 11,
+                  "text": "ENDED_SKIPPED - Skipped because of conditions."
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "background_solid",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "none",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Health",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [
+            {
+              "options": {
+                "1550": {
+                  "color": "dark-blue",
+                  "index": 0,
+                  "text": "Active"
+                },
+                "1700": {
+                  "color": "dark-blue",
+                  "index": 1,
+                  "text": "Waiting for predecessor"
+                },
+                "1800": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "ENDED_NOT_OK - aborted"
+                },
+                "1802": {
+                  "color": "dark-red",
+                  "index": 3,
+                  "text": "ENDED_JP_ABEND  - not executed due to abnormal Workflow end."
+                },
+                "1820": {
+                  "color": "dark-red",
+                  "index": 4,
+                  "text": "FAULT_OTHER - Start impossible. Other error."
+                },
+                "1823": {
+                  "color": "dark-red",
+                  "index": 5,
+                  "text": "FAULT_POST_PROCESSING - error in post processing."
+                },
+                "1850": {
+                  "color": "dark-yellow",
+                  "index": 6,
+                  "text": "ENDED_CANCEL - manually canceled"
+                },
+                "1851": {
+                  "color": "dark-yellow",
+                  "index": 7,
+                  "text": "ENDED_JP_CANCEL - Workflow canceled manually."
+                },
+                "1900": {
+                  "color": "dark-green",
+                  "index": 11,
+                  "text": "ENDED_OK - ended normally"
+                },
+                "1922": {
+                  "color": "dark-yellow",
+                  "index": 8,
+                  "text": "ENDED_INACTIVE - Task was manually set inactive."
+                },
+                "1930": {
+                  "color": "dark-yellow",
+                  "index": 10,
+                  "text": "ENDED_SKIPPED - Skipped because of WHEN clause"
+                },
+                "1933": {
+                  "color": "dark-yellow",
+                  "index": 9,
+                  "text": "ENDED_SKIPPED - Skipped because of conditions."
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "activation_time"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 180
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "left"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Name"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 258
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 2,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 0,
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "job_health{application=~\"$application\", name=~\"$job\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Health",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "activation_time",
+                "name",
+                "Value",
+                "start_time",
+                "end_time"
+              ]
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "activation_time"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Value": 4,
+              "activation_time": 1,
+              "end_time": 3,
+              "name": 0,
+              "start_time": 2
+            },
+            "renameByName": {
+              "Value": "Status",
+              "activation_time": "Activation",
+              "end_time": "End",
+              "name": "Name",
+              "start_time": "Start"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": ".*",
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(job_health,application)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Application",
+        "multi": false,
+        "name": "application",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(job_health,application)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": ".*",
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(job_health,name)",
+        "description": "Select the job name for which you want to see the details.",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Job Name",
+        "multi": false,
+        "name": "job",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(job_health,name)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Job Detail",
+  "uid": "job-details",
+  "version": 4,
+  "weekStart": ""
+}
