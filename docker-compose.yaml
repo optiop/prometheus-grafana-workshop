@@ -1,8 +1,13 @@
-version: "3"
+version: "3.8"
 services:
-  app:
-    image: app
-    build: ./app
+  python-app:
+    build: ./python-app
+    ports: 
+      - 8000:8000
+    networks:
+      - monitoring
+  java-app:
+    build: ./java-app
     ports:
       - 8080:8080
       - 8081:8081
@@ -32,6 +37,7 @@ services:
     image: grafana/grafana
     volumes:
       - ./grafana/provisioning/datasources/:/etc/grafana/provisioning/datasources/
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
     environment:
       - GF_PATH_PROVISIONING=/etc/grafana/provisioning
     ports:
