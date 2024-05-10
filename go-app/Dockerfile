@@ -8,5 +8,5 @@ RUN CGO_ENABLED=0 go build -ldflags="-w" -o sleep
 FROM scratch
 WORKDIR /app
 COPY --from=build /app/sleep /app/sleep
-EXPOSE 8081
+EXPOSE 8082
 ENTRYPOINT ["/app/sleep"]

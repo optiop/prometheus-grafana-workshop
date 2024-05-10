@@ -15,6 +15,11 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['python-app:8000']
+  - job_name: 'go-app'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['go-app:8082']
+    metrics_path: /metrics
 
 alerting:
   alertmanagers:

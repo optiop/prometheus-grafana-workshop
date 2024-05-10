@@ -44,6 +44,6 @@ func main() {
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/sleep", sleepHandler)
 	http.Handle("/metrics", promhttp.Handler())
-	http.ListenAndServe(":8081", nil)
+	http.ListenAndServe(":8082", nil)
 
 }
