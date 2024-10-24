@@ -1,0 +1,17 @@
+global:
+  smtp_from: 'hello@optiop.org'
+  smtp_hello: optiop.org
+  smtp_smarthost: stunnel:465
+  smtp_require_tls: false
+  smtp_auth_username: 'alertmanager@optiop.org'
+  smtp_auth_password: 'password'
+
+route:
+  receiver: 'admin'
+
+receivers:
+- name: 'admin'
+  email_configs:
+  - to: 'admin@optiop.org'
+    tls_config:
+      insecure_skip_verify: true
