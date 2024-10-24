@@ -1,0 +1,2066 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 7,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 26,
+      "title": "Windows",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 3,
+      "links": [
+        {
+          "title": "Show details",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=STEP-EDI\n"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"STEP-EDI\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEP-EDI",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 6,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=VVEN-DB01"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"VEN-DB01\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "VEN-DB01",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 24,
+      "links": [
+        {
+          "title": "Show Details",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"}  and {server=\"LDAP-API\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "LDAP-API",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 8,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=STEP-MFT"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"STEP-MFT\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEP-MFT",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 7,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=VHD-DW01"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"VHD-DW01\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "VHD-DW01",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 4,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=STEP-MFTQA"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"STEP-MFTQA\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEP-MFTQA",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 5
+      },
+      "id": 9,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=VHD-FTPEDI\n"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"VHD-FTPEDI\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "VHD-FTPEDI",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 5
+      },
+      "id": 5,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=VHD-RMS"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"VHD-RMS\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "VHD-RMS",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 5
+      },
+      "id": 10,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/w5SHQpbnk/windows-node-exporter?orgId=1&refresh=5s&var-server=WEB-RMS"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up {job=\"node_exporter_windows\"} and {server=\"WEB-RMS\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "WEB-RMS",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 25,
+      "title": "Linux",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 10
+      },
+      "id": 11,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=Cloud-Sync&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"Cloud-Sync\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Cloud-Sync",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 10
+      },
+      "id": 15,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=PSWEB01&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"PSWEB01\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "PSWEB01",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 10
+      },
+      "id": 23,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPNAS01&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPNAS01\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPNAS01",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 10
+      },
+      "id": 19,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPLB01&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPLB01\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPLB01",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 10
+      },
+      "id": 13,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=Mongo-PROD&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B\n"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"Mongo-PROD\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Mongo-PROD",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 10
+      },
+      "id": 14,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=PSVHDDB01&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"PSVHDDB01\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "PSVHDDB01",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 14
+      },
+      "id": 16,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPDB&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPDB\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPDB",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 14
+      },
+      "id": 21,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPLB03&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPLB03\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPLB03",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 14
+      },
+      "id": 18,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPDB-DEV&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPDB-DEV\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPDB-DEV",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 14
+      },
+      "id": 12,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=Mongo-QA&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"Mongo-QA\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Mongo-QA",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 14
+      },
+      "id": 17,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPDB-QA&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPDB-QA\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPDB-QA",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 14
+      },
+      "id": 22,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPLB04&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPLB04\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPLB04",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#C4162A",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "short",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 18
+      },
+      "id": 20,
+      "links": [
+        {
+          "title": "",
+          "url": "http://172.16.1.15:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&var-datasource=default&var-job=node_exporter_linux&var-node=STEPLB02&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B"
+        }
+      ],
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "addce070-d9ea-4b1c-92d9-2b19b013e050"
+          },
+          "editorMode": "code",
+          "expr": "up{job=\"node_exporter_linux\"} and {node=\"STEPLB02\"}",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "STEPLB02",
+      "type": "stat"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "UP/DOWN servers",
+  "uid": "afd8423e-4895-4dfa-9af4-d146542b807a",
+  "version": 14,
+  "weekStart": ""
+}
