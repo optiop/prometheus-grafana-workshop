@@ -1,0 +1,41 @@
+services:
+  prometheus:
+    image: quay.io/prometheus/prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    command: "--config.file=/etc/prometheus/prometheus.yaml --storage.tsdb.path=/prometheus"
+    ports:
+      - 9090:9090
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning/
+    environment:
+      GF_PATH_PROVISIONING: /etc/grafana/provisioning
+      GF_AUTH_ANONYMOUS_ENABLED: true
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+    ports:
+      - 3000:3000 
+
+  alertmanager:
+    image: quay.io/prometheus/alertmanager
+    volumes:
+      - ./alertmanager/:/etc/alertmanager/
+    ports:
+      - 9093:9093
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
+
+  stunnel:
+    image: dweomer/stunnel
+    environment:
+      - STUNNEL_SERVICE=smtps
+      - STUNNEL_ACCEPT=465
+      - STUNNEL_CONNECT=mailhog:1025
+    ports:
+      - 465:465
