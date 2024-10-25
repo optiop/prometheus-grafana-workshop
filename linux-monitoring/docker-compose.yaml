@@ -52,6 +52,21 @@ services:
     ports:
       - 9093:9093
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
+
+  stunnel:
+    image: dweomer/stunnel
+    environment:
+      - STUNNEL_SERVICE=smtps
+      - STUNNEL_ACCEPT=465
+      - STUNNEL_CONNECT=mailhog:1025
+    ports:
+      - 465:465
+
   loki:
     image: grafana/loki
     ports:
