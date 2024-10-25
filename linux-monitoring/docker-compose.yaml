@@ -79,8 +79,8 @@ services:
   promtail:
     image: grafana/promtail:latest
     ports:
-      - 1514:1514
-      - 9080:9080
+      - 1514:1514/udp
+      - 9080:9080/tcp
     command: -config.file=/etc/promtail/promtail-config.yaml
     restart: always
     volumes:
@@ -91,6 +91,8 @@ services:
     image: balabit/syslog-ng:latest
     ports:
       - 514:514/udp
+      - 601:601/tcp
     restart: always
     volumes:
     - ./syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+
