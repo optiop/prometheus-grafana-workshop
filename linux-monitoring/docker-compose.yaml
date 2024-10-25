@@ -94,5 +94,7 @@ services:
       - 601:601/tcp
     restart: always
     volumes:
+    - /etc/machine-id:/etc/machine-id:ro
+    - /var/log/:/var/log/sys:ro
     - ./syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
 
