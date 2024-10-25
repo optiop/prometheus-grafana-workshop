@@ -17,6 +17,8 @@ services:
       GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
     ports:
       - 3000:3000 
+    networks:
+      - loki  
   
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -51,17 +53,37 @@ services:
     ports:
       - 9093:9093
 
-  mailhog:
-    image: mailhog/mailhog
+  loki:
+    image: grafana/loki
     ports:
-      - 8025:8025
-      - 1025:1025
-
-  stunnel:
-    image: dweomer/stunnel
-    environment:
-      - STUNNEL_SERVICE=smtps
-      - STUNNEL_ACCEPT=465
-      - STUNNEL_CONNECT=mailhog:1025
+      - 3100:3100
+    command: -config.file=/etc/loki/loki-config.yaml
+    restart: always
+    volumes:
+      - ./loki/loki-config.yaml:/etc/loki/loki-config.yaml
+    networks:
+      - loki
+  
+  promtail:
+    image: grafana/promtail:latest
     ports:
-      - 465:465
+      - 1514:1514
+      - 9080:9080
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    restart: always
+    volumes:
+    - ./promtail/promtail-config.yaml:/etc/promtail/promtail-config.yaml
+    networks:
+      - loki
+  
+  syslog-ng:
+    command: -edv
+    image: balabit/syslog-ng:latest
+    ports:
+      - 514:514/udp
+    restart: always
+    volumes:
+    - ./syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+networks:
+  loki:
+    
