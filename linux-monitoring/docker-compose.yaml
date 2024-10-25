@@ -13,6 +13,7 @@ services:
       - ./grafana/provisioning:/etc/grafana/provisioning/
     environment:
       GF_PATH_PROVISIONING: /etc/grafana/provisioning
+      GF_LOG_LEVEL: error
       GF_AUTH_ANONYMOUS_ENABLED: true
       GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
     ports:
@@ -65,3 +66,35 @@ services:
       - STUNNEL_CONNECT=mailhog:1025
     ports:
       - 465:465
+
+  loki:
+    image: grafana/loki
+    ports:
+      - 3100:3100
+    command: -config.file=/etc/loki/loki-config.yaml
+    restart: always
+    volumes:
+      - ./loki/loki-config.yaml:/etc/loki/loki-config.yaml
+  
+  promtail:
+    image: grafana/promtail:latest
+    ports:
+      - 1514:1514/udp
+      - 9080:9080/tcp
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    restart: always
+    volumes:
+    - ./promtail/promtail-config.yaml:/etc/promtail/promtail-config.yaml
+  
+  syslog-ng:
+    command: -edv
+    image: balabit/syslog-ng:latest
+    ports:
+      - 514:514/udp
+      - 601:601/tcp
+    restart: always
+    volumes:
+    - /etc/machine-id:/etc/machine-id:ro
+    - /var/log/:/var/log/sys:ro
+    - ./syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+
