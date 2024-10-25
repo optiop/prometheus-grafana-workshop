@@ -18,8 +18,6 @@ services:
       GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
     ports:
       - 3000:3000 
-    networks:
-      - loki  
   
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -62,8 +60,6 @@ services:
     restart: always
     volumes:
       - ./loki/loki-config.yaml:/etc/loki/loki-config.yaml
-    networks:
-      - loki
   
   promtail:
     image: grafana/promtail:latest
@@ -74,8 +70,6 @@ services:
     restart: always
     volumes:
     - ./promtail/promtail-config.yaml:/etc/promtail/promtail-config.yaml
-    networks:
-      - loki
   
   syslog-ng:
     command: -edv
@@ -85,6 +79,4 @@ services:
     restart: always
     volumes:
     - ./syslog-ng/syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
-networks:
-  loki:
     
