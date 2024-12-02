@@ -1,24 +1,24 @@
 services:
-  python-app:
-    build: ./python-app
-    ports: 
-      - 8000:8000
-    networks:
-      - monitoring
-  java-app:
-    build: ./java-app
-    ports:
-      - 8080:8080
-      - 8081:8081
-    networks:
-      - monitoring
+  # python-app:
+  #   build: ./python-app
+  #   ports: 
+  #     - 8000:8000
+  #   networks:
+  #     - monitoring
+  # java-app:
+  #   build: ./java-app
+  #   ports:
+  #     - 8080:8080
+  #     - 8081:8081
+  #   networks:
+  #     - monitoring
   
-  go-app:
-    build: ./go-app
-    ports:
-      - 8082:8082
-    networks:
-      - monitoring
+  # go-app:
+  #   build: ./go-app
+  #   ports:
+  #     - 8082:8082
+  #   networks:
+  #     - monitoring
 
   prometheus:
     image: quay.io/prometheus/prometheus
@@ -44,7 +44,7 @@ services:
     volumes:
       - ./grafana/provisioning/datasources/:/etc/grafana/provisioning/datasources/
       - ./grafana/provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      # - ./grafana/grafana.ini:/etc/grafana/grafana.ini
     environment:
       - GF_PATH_PROVISIONING=/etc/grafana/provisioning
     ports:
@@ -52,24 +52,24 @@ services:
     networks:
       - monitoring
 
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - 8025:8025
-      - 1025:1025
-    networks:
-      - monitoring
+  # mailhog:
+  #   image: mailhog/mailhog
+  #   ports:
+  #     - 8025:8025
+  #     - 1025:1025
+  #   networks:
+  #     - monitoring
   
-  stunnel:
-    image: dweomer/stunnel
-    environment:
-      - STUNNEL_SERVICE=smtps
-      - STUNNEL_ACCEPT=465
-      - STUNNEL_CONNECT=mailhog:1025
-    ports:
-      - 465:465
-    networks:
-      - monitoring
+  # stunnel:
+  #   image: dweomer/stunnel
+  #   environment:
+  #     - STUNNEL_SERVICE=smtps
+  #     - STUNNEL_ACCEPT=465
+  #     - STUNNEL_CONNECT=mailhog:1025
+  #   ports:
+  #     - 465:465
+  #   networks:
+  #     - monitoring
 
 networks:
   monitoring:
