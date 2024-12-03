@@ -28,3 +28,12 @@ schema_config:
 storage_config:
   filesystem:
     directory: /tmp/loki/chunks
+                 
+ruler:
+  storage:
+    type: local
+    local:
+      directory: /etc/loki/rules
+  rule_path: /etc/loki/rules
+  alertmanager_url: http://alertmanager:9093
+  enable_api: true   

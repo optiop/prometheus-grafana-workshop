@@ -1,0 +1,21 @@
+groups:
+    - name: high_error_rate
+      rules:
+        - alert: HighErrorRate
+          expr: |
+            sum(rate({filename="/var/log/web_requests.log"} != "status=200" [1m])) > 10
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            description: Error rate is above 10 requests per minute.
+            summary: High error rate detected in logs
+        - alert: SlowRequests
+          expr: |
+            sum(rate({filename="/var/log/web_requests.log"} | logfmt | duration > 1000 [1m])) > 5
+          for: 2m
+          labels:
+            severity: warning
+          annotations:
+            description: More than 5 requests are taking longer than 1 second to respond.
+            summary: Slow requests detected
