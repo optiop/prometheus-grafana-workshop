@@ -1,3 +1,16 @@
+db = db.getSiblingDB("optiop");
+
+db.users.insertMany([
+  { name: "John Doe", email: "john@example.com", age: 30 },
+  { name: "Jane Smith", email: "jane@example.com", age: 25 },
+  { name: "Mike Johnson", email: "mike@example.com", age: 35 }
+]);
+
+db.products.insertMany([
+  { name: "Laptop", price: 1000, stock: 50 },
+  { name: "Smartphone", price: 700, stock: 100 },
+  { name: "Tablet", price: 400, stock: 80 }
+]);
 db.templateCollection.insertMany([
     { name: "templateData1", value: "sample1" },
     { name: "templateData2", value: "sample2" },
