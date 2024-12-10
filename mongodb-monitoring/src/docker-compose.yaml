@@ -1,0 +1,70 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    entrypoint:
+      - sh
+      - -euc
+      - |
+        mkdir -p /etc/grafana/provisioning/datasources
+        cat <<EOF > /etc/grafana/provisioning/datasources/prometheus.yaml
+        apiVersion: 1
+        datasources:
+        - name: prometheus
+          type: prometheus
+          access: proxy 
+          orgId: 1
+          url: http://prometheus:9090
+          basicAuth: false
+          isDefault: true
+          version: 1
+          editable: false
+        EOF
+        /run.sh
+    networks:
+        - mongo
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+    networks:
+        - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+      - ./insert_template/insert_template.js:/docker-entrypoint-initdb.d/insert_template.js:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: optiop
+    restart: always
+    networks:
+        - mongo
+
+  mongo-exporter:
+    image: bitnami/mongodb-exporter:latest
+    environment:
+      MONGODB_URI: mongodb://root:password@mongo:27017/optiop
+    ports:
+      - "9216:9216"
+    depends_on:
+      - mongo
+    restart: always
+    networks:
+        - mongo
+        
+networks:
+  mongo:
+    
