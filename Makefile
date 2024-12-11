@@ -43,3 +43,4 @@ help:
 	@echo "  show-mongodb-slides     -- Run mongodb monitoring stack and slides"
 	@echo "  show-app-slides         -- Run app monitoring stack and slides"
 	@echo "  help                    -- Show this help message"
+	@echo ""
