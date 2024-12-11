@@ -3,7 +3,7 @@ import Reveal from "reveal.js";
 import { useEffect, useRef } from "react";
 import SlideHero from "@/components/slideHero";
 import SlideIframeFullScreen from "@/components/slideIframeFullscreen";
-import SlideGrafanaSceneCode from "@/components/slideGrafanaSceneCode";
+import SlideImage from "@/components/slideImage";
 
 
 {
@@ -47,17 +47,21 @@ export default function Home() {
         />
         <SlideIframeFullScreen 
           id="grafana-dashboard"
-          title="Grafana Dashboard" 
-          iframeSrc="http://localhost:3000"
+          title="NodeExporter Dashboard" 
+          iframeSrc="http://localhost:3000/d/N6fqD87nk/prometheus-node-exporter?orgId=1&from=now-5m&to=now&timezone=browser&var-DS_PROMETHEUS=PBFA97CFB590B2093&var-job=node-exporter&var-node=node-exporter:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B&refresh=1m"
+        />
+        <SlideImage
+          title="Node-Exporter Big Picture"
+          imageSrc="/.assets/linux-big.picture.drawio.svg"
         />
         <SlideIframeFullScreen 
-          id="grafana-dashboard"
-          title="Grafana Dashboard" 
+          id="prometheus-view"
+          title="Prometheus View" 
           iframeSrc="http://localhost:9090"
         />
         <SlideIframeFullScreen 
-          id="grafana-dashboard"
-          title="Grafana Dashboard" 
+          id="mailhog-dashboard"
+          title="MailHog" 
           iframeSrc="http://localhost:8025"
         />
       </div>

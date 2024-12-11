@@ -31,6 +31,7 @@ stop-all:
 	cd linux && docker compose down
 	cd mongodb && docker compose down
 	cd app-monitoring && docker compose down
+	pkill -f 'npm run dev'
 
 help:
 	@echo "Usage: make <target>"

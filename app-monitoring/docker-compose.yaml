@@ -1,25 +1,4 @@
 services:
-  # python-app:
-  #   build: ./python-app
-  #   ports: 
-  #     - 8000:8000
-  #   networks:
-  #     - monitoring
-  # java-app:
-  #   build: ./java-app
-  #   ports:
-  #     - 8080:8080
-  #     - 8081:8081
-  #   networks:
-  #     - monitoring
-  
-  # go-app:
-  #   build: ./go-app
-  #   ports:
-  #     - 8082:8082
-  #   networks:
-  #     - monitoring
-
   prometheus:
     image: quay.io/prometheus/prometheus
     volumes:
@@ -27,18 +6,14 @@ services:
     command: "--config.file=/etc/prometheus/prometheus.yaml --storage.tsdb.path=/prometheus"
     ports:
       - 9090:9090
-    networks:
-      - monitoring
-  
+ 
   alertmanager:
     image: quay.io/prometheus/alertmanager
     volumes:
       - ./alertmanager/:/etc/alertmanager/
     ports:
       - 9093:9093
-    networks:
-      - monitoring
-    
+   
   grafana:
     image: grafana/grafana
     volumes:
@@ -49,28 +24,18 @@ services:
       - GF_PATH_PROVISIONING=/etc/grafana/provisioning
     ports:
       - 3000:3000 
-    networks:
-      - monitoring
 
-  # mailhog:
-  #   image: mailhog/mailhog
-  #   ports:
-  #     - 8025:8025
-  #     - 1025:1025
-  #   networks:
-  #     - monitoring
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
   
-  # stunnel:
-  #   image: dweomer/stunnel
-  #   environment:
-  #     - STUNNEL_SERVICE=smtps
-  #     - STUNNEL_ACCEPT=465
-  #     - STUNNEL_CONNECT=mailhog:1025
-  #   ports:
-  #     - 465:465
-  #   networks:
-  #     - monitoring
-
-networks:
-  monitoring:
-    driver: bridge
+  stunnel:
+    image: dweomer/stunnel
+    environment:
+      - STUNNEL_SERVICE=smtps
+      - STUNNEL_ACCEPT=465
+      - STUNNEL_CONNECT=mailhog:1025
+    ports:
+      - 465:465

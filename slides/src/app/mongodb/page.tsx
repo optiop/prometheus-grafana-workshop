@@ -3,7 +3,7 @@ import Reveal from "reveal.js";
 import { useEffect, useRef } from "react";
 import SlideHero from "@/components/slideHero";
 import SlideIframeFullScreen from "@/components/slideIframeFullscreen";
-import SlideGrafanaSceneCode from "@/components/slideGrafanaSceneCode";
+import SlideImage from "@/components/slideImage";
 
 
 {
@@ -42,13 +42,17 @@ export default function Home() {
     <div className="reveal" ref={deckDivRef}>
       <div className="slides">
         <SlideHero 
-          title="Mongo-DB monitoring" 
+          title="MongoDB monitoring" 
           subTitle="Mongo-exporter, prometheus, and Grafana"
         />
         <SlideIframeFullScreen 
-          id="grafana-dashboard"
-          title="Grafana Dashboard" 
-          iframeSrc="http://localhost:3000"
+          id="mongodb-dashboard"
+          title="MongoDB Dashboard" 
+          iframeSrc="http://localhost:3000/d/AyWQt9jWkqqqq/mongodb?orgId=1&from=now-5m&to=now&timezone=browser&var-datasource=P1809F7CD0C75ACF3&var-instance=mongodb"
+        />
+        <SlideImage
+          title="Mongo-Exporter Big Picture"
+          imageSrc="/.assets/mongo-big.picture.drawio.svg"
         />
         <SlideIframeFullScreen 
           id="prometheus"
