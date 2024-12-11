@@ -26,19 +26,19 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./mongo/insert_template.js:/docker-entrypoint-initdb.d/insert_template.js:ro
+      - ./mongodb/insert_template.js:/docker-entrypoint-initdb.d/insert_template.js:ro
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: optiop
-    restart: always
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
 
   mongo-exporter:
-    image: bitnami/mongodb-exporter:latest
+    image: percona/mongodb_exporter:0.40
     environment:
-      MONGODB_URI: mongodb://root:password@mongo:27017/optiop
+       MONGODB_URI: mongodb://root:root@mongo:27017/admin
+    command:
+      - '--collect-all'
     ports:
       - "9216:9216"
     depends_on:
       - mongo
-    restart: always
