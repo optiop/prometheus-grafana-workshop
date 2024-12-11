@@ -41,7 +41,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Affiche le statut des instances.",
+      "description": "Instance status",
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -123,7 +123,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Disponibilité du serveur.",
+      "description": "Server availability.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -212,7 +212,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Nombre de CPU",
+      "description": "Number of CPU",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -281,7 +281,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Charge du CPU pour le système.",
+      "description": "CPU load for the system.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -359,7 +359,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Charge du CPU pour l'utilisateur.",
+      "description": "CPU load for user.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -437,7 +437,7 @@
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
-      "description": "Disponibilité du CPU.",
+      "description": "CPU availability.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -519,7 +519,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire totale et mémoire virtuelle.",
+      "description": "Total memory and virtual memory.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -603,7 +603,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire totale.",
+      "description": "Total memory.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -685,7 +685,7 @@
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
-      "description": "Mémoire disponible.",
+      "description": "Available memory.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -758,7 +758,7 @@
           "refId": "A"
         }
       ],
-      "title": "RAM disponible",
+      "title": "Available RAM",
       "type": "stat"
     },
     {
@@ -766,7 +766,7 @@
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
-      "description": "Pourcentage de mémoire disponible\nRemarque : sur les noyaux Linux modernes, la quantité de mémoire disponible pour l'application n'est pas la même que la quantité de mémoire libre + mise en cache + tampons.",
+      "description": "Percentage of available memory\nNote: on modern Linux kernels, the amount of memory available to the application is not the same as the amount of free memory + cached + buffers.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -846,7 +846,7 @@
           "refId": "A"
         }
       ],
-      "title": "Memoire disponible.",
+      "title": "Memory available.",
       "type": "stat"
     },
     {
@@ -854,7 +854,7 @@
         "type": "prometheus",
         "uid": "P1809F7CD0C75ACF3"
       },
-      "description": "Mémoire libre.",
+      "description": "Free memory.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -928,7 +928,7 @@
           "refId": "A"
         }
       ],
-      "title": "RAM libre",
+      "title": "Free RAM",
       "type": "stat"
     },
     {
@@ -936,7 +936,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire virtuelle.",
+      "description": "Virtual memory.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1021,7 +1021,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire tampon.",
+      "description": "Buffer memory.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1101,7 +1101,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire Utilisée par MongoDB",
+      "description": "Memory Used by MongoDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1182,7 +1182,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Nombre de connexions entrantes.",
+      "description": "Number of incoming connections.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1260,7 +1260,7 @@
           "step": 1800
         }
       ],
-      "title": "Connexions ouvertes.",
+      "title": "Open connections.",
       "type": "stat"
     },
     {
@@ -1349,7 +1349,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "calecul de la latence",
+      "description": "latency calculation",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1425,7 +1425,7 @@
           "refId": "A"
         }
       ],
-      "title": "Latence",
+      "title": "Latency",
       "type": "stat"
     },
     {
@@ -1433,7 +1433,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Requêtes par secondes.",
+      "description": "Requests per second.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1516,7 +1516,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire allouée à MongoDB",
+      "description": "Mongo RAM Allocated",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1593,7 +1593,7 @@
           "refId": "A"
         }
       ],
-      "title": "RAM Mongo Allouée",
+      "title": "Mongo RAM Allocated",
       "type": "stat"
     },
     {
@@ -1601,7 +1601,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Pool de connexion disponible sur l'instance.",
+      "description": "Connection pool available on the instance.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1679,7 +1679,7 @@
           "step": 1800
         }
       ],
-      "title": "Connexions disponibles.",
+      "title": "Connections available.",
       "type": "stat"
     },
     {
@@ -1700,7 +1700,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Connexions TCP (entrantes)",
+      "description": "TCP Connections (inbound)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1802,7 +1802,7 @@
           "step": 300
         }
       ],
-      "title": "Connexions.",
+      "title": "Connections.",
       "type": "timeseries"
     },
     {
@@ -1810,7 +1810,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Répartition des connexions : Active, Courante (en moyenne) et disponible.",
+      "description": "Connection distribution: Active, Current (average) and available.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1876,7 +1876,7 @@
           "refId": "A"
         }
       ],
-      "title": "Etat des connexions",
+      "title": "Connection status",
       "type": "stat"
     },
     {
@@ -1884,7 +1884,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Temps de latence moyen des opérations (classées par lecture, écriture ou (autre) commande).",
+      "description": "Average latency of operations (classified by read, write or (other) command).",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1982,7 +1982,7 @@
           "refId": "A"
         }
       ],
-      "title": "Temps de latence.",
+      "title": "Latency time.",
       "type": "timeseries"
     },
     {
@@ -2581,7 +2581,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Mémoire consommée  en MB",
+      "description": "Memory consumed in MB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2706,7 +2706,7 @@
           "step": 240
         }
       ],
-      "title": "Mémoire consommée",
+      "title": "Memory consumed",
       "type": "timeseries"
     },
     {
@@ -2714,7 +2714,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Opérations classées par type de protocole hérité (requête, insertion, mise à jour, suppression, obtention supplémentaire). Et (à partir des threads TTL internes) les suppressions de documents/sec par index TTL.",
+      "description": "Operations categorized by legacy protocol type (query, insert, update, delete, get extra). And (from internal TTL threads) document deletes/sec by index TTL.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2850,7 +2850,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Docs par seconde, insérés, mis à jour, supprimés ou renvoyés. (N.b. pas 1 pour 1 avec le nombre d'opérations).",
+      "description": "Docs per second, inserted, updated, deleted or returned. (N.b. not 1 to 1 with the number of operations).",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2959,7 +2959,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Répartition par type d'opérations sur les documents.",
+      "description": "Distribution by type of operations on documents.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3060,7 +3060,7 @@
           "refId": "A"
         }
       ],
-      "title": "Répartition par type d'opérations.",
+      "title": "Distribution by type of operations.",
       "type": "timeseries"
     },
     {
@@ -3068,7 +3068,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Opérations en file d'attente en raison d'un verrou.",
+      "description": "Operations queued due to lock.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3178,7 +3178,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Un rapport élevé peut indiquer des opérations sous-optimales qui analysent un grand nombre de documents pour n'en renvoyer qu'une petite partie.",
+      "description": "A high ratio may indicate suboptimal operations that scan a large number of documents to return only a small fraction.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3284,7 +3284,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Curseurs ouverts. Inclut les curseurs inactifs.",
+      "description": "Open cursors. Includes inactive cursors.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3386,7 +3386,7 @@
           "step": 300
         }
       ],
-      "title": "Curseurs.",
+      "title": "Cursors",
       "type": "timeseries"
     },
     {
@@ -3394,7 +3394,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Nombre d'exécutions par seconde par type d'opération.",
+      "description": "Number of executions per second by operation type.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3490,7 +3490,7 @@
           "refId": "A"
         }
       ],
-      "title": "Nombre d'exécutions.",
+      "title": "Number of executions.",
       "type": "timeseries"
     },
     {
@@ -3612,7 +3612,7 @@
         "type": "prometheus",
         "uid": "${datasource}"
       },
-      "description": "Ce panneau indique le nombre d'événements d'assertions par seconde en moyenne sur la période donnée. Dans la plupart des cas, les assertions sont triviales, mais vous devriez vérifier vos fichiers journaux si ce compteur atteint des sommets où est constamment élevé..",
+      "description": "This panel shows the number of assertion events per second on average over the given period. In most cases, assertions are trivial, but you should check your log files if this counter spikes or is consistently high.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -4058,7 +4058,7 @@
           "step": 300
         }
       ],
-      "title": "getLastError Write Time",
+      "title": "getLastError Write Time ",
       "type": "timeseries"
     }
   ],
