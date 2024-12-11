@@ -1,7 +1,9 @@
 
-show-slides:
-	cd slides && npm install
-	cd slides && npm run dev &
+run-slides:
+	npm --prefix slides install
+	npm --prefix slides run dev &
+
+show-slides: run-slides
 	open http://localhost:3456
 
 run-linux-monitoring:
@@ -13,21 +15,15 @@ run-mongodb-monitoring:
 run-app-monitoring:
 	cd app-monitoring && docker compose up --build -d
 
-show-linux-slides:
-	npm --prefix slides install
-	npm --prefix slides run dev &
+show-linux-slides: run-slides
 	cd linux && docker compose up --build -d
 	open http://localhost:3456/linux
 
-show-mongodb-slides:
-	npm install
-	npm run dev &
+show-mongodb-slides: run-slides
 	cd mongodb && docker compose up --build -d
 	open http://localhost:3456/mongodb
 
-show-app-slides:
-	npm install
-	npm run dev
+show-app-slides: run-slides
 	cd app-monitoring && docker compose up --build -d
 	open http://localhost:3456/app
 
