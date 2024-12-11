@@ -18,8 +18,18 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - ./prometheus/mongo-rules.yaml:/etc/prometheus/mongo-rules.yaml
     command:
       - '--config.file=/etc/prometheus/prometheus.yaml'
+  
+  alertmanager:
+    image: prom/alertmanager:latest
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager/alertmanager.yaml:/etc/alertmanager/alertmanager.yaml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yaml'
 
   mongo:
     image: mongo:latest
