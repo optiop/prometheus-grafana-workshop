@@ -1,10 +1,10 @@
-db = db.getSiblingDB("optiop");
-
-db.users.insertMany([
-  { name: "John Doe", email: "john@example.com", age: 30 },
-  { name: "Jane Smith", email: "jane@example.com", age: 25 },
-  { name: "Mike Johnson", email: "mike@example.com", age: 35 }
-]);
+db.updateUser("root", {
+  roles: [
+    { role: "root", db: "admin" },
+    { role: "clusterMonitor", db: "admin" },
+    { role: "read", db: "local" },
+  ],
+});
 
 db.products.insertMany([
   { name: "Laptop", price: 1000, stock: 50 },

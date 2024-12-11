@@ -1,0 +1,71 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: grafana
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_LOG_LEVEL: error
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - ./prometheus/mongo-rules.yaml:/etc/prometheus/mongo-rules.yaml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+  
+  alertmanager:
+    image: prom/alertmanager:latest
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager/alertmanager.yaml:/etc/alertmanager/alertmanager.yaml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yaml'
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb/insert_template.js:/docker-entrypoint-initdb.d/insert_template.js:ro
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+
+  mongo-exporter:
+    image: percona/mongodb_exporter:0.40
+    environment:
+       MONGODB_URI: mongodb://root:root@mongo:27017/admin
+    command:
+      - '--collect-all'
+    ports:
+      - "9216:9216"
+    depends_on:
+      - mongo
+  
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml 
+    volumes:
+      - ./loki/loki-config.yaml:/etc/loki/local-config.yaml
+
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - /var/log:/var/log
+      - ./promtail/promtail-config.yaml:/etc/promtail/config.yaml
+    command: -config.file=/etc/promtail/config.yaml
+    depends_on:
+      - loki
