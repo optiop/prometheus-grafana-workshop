@@ -1,0 +1,57 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: grafana
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_LOG_LEVEL: error
+    restart: always
+    networks:
+      - mongo
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+    networks:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo/insert_template.js:/docker-entrypoint-initdb.d/insert_template.js:ro
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    restart: always
+    networks:
+      - mongo
+
+  mongo-exporter:
+    image: percona/mongodb_exporter:0.40
+    environment:
+    #               mongodb://<USER>:<PASSWORD>@<HOST>:<PORT>/<DB_NAME>
+       MONGODB_URI: mongodb://root:root@mongo:27017/admin
+    ports:
+      - "9216:9216"
+    depends_on:
+      - mongo
+    restart: always
+    networks:
+      - mongo
+
+networks:
+  mongo:
