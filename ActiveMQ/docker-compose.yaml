@@ -1,0 +1,31 @@
+services:
+  activemq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: optiop-activemq:latest
+    hostname: "activemq"
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+      - "9404:9404"
+    environment:
+      ACTIVEMQ_ADMIN_LOGIN: "admin"
+      ACTIVEMQ_ADMIN_PASSWORD: "admin"
+      ACTIVEMQ_WRITE_LOGIN: "admin"
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+       - ./grafana/provisioning:/etc/grafana/provisioning
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+    command:
+      - --config.file=/etc/prometheus/prometheus.yaml
